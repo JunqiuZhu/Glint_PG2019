@@ -33,21 +33,16 @@ struct chunk
 };
 int ifmanage[Height][Width];
 int idmat[Height][Width];
-//生成0——number-1的随机数
 int random(int number)
 {
 	srand(time(NULL));
 	return rand() % number;
 }
-//合成纹理大小
 int num = 1;
 //const int Height = 2024;
 //const int Width = 2024;
-//重叠块大小
 const int OverLapSize = 8;
-//选取的块的大小
 const int TileSize = 64;
-//源图默认尺寸
 const int DefaultSize = 200;
 using point = pair<int, int>;
 const int w = int((Width - OverLapSize) / (TileSize - OverLapSize));
@@ -89,7 +84,6 @@ float A_inv[16][16] = { { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 { 4, -4, -4, 4, 2, 2, -2, -2, 2, -2, 2, -2, 1, 1, 1, 1 } };
 
 
-//重载<
 bool operator<(const point v1, const point v2)
 {
 	if (v1.first == v2.first)
@@ -184,7 +178,6 @@ void computeCoeff(float *alpha, const float *x) {
 }
 
 Vector2f getNormal(float u, float v) {
-	// Bicubic interpolation双线性三次插值
 	float x = u * width;
 	float y = v * height;
 	int x1 = (int)x;
