@@ -1,4 +1,4 @@
-# Glint_PG2019
+# Stationary_PG2019
 Code and supplementary materials for reimplementation of paper **"A Stationary SVBRDF Material Modeling Method Based on Discrete Microsurface "**
 ## Code
 For __preprocessing__ process, __preprocess.cpp__ is provided for opencv and openexr users.  
